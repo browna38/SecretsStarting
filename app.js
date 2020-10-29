@@ -18,9 +18,7 @@ mongoose.set("useCreateIndex", true);
 
 const userSchema = new mongoose.Schema ({
   email: String,
-  password: String,
-  googleId: String,
-  secret: String
+  password: String
 });
 
 const User = new mongoose.model("User", userSchema);
@@ -37,6 +35,23 @@ app.get("/register", function(req, res){
     res.render("register");
   });
 
+  app.post("/register", function(req, res){
+
+    const newUser = new User({
+        email: req.body.username,
+        password: req.body.password
+    });
+
+    newUser.save(function(err){
+        if(err){
+            console.log(err);
+        }else{
+            res.render("secrets");
+        }
+        
+    });
+  
+  });
 
 app.listen(80, function() {
     console.log("Server started on port 80.");
