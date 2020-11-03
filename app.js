@@ -32,7 +32,7 @@ res.render("login");
 });
 
 app.get("/register", function(req, res){
-    res.render("stream");
+    req("http://0.0.0.0:3000");
   });
 
   app.post("/register", function(req, res){
