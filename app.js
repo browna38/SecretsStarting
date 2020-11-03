@@ -13,8 +13,8 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
-mongoose.connect("mongodb://localhost:27017/userDB", {useNewUrlParser: true});
-mongoose.set("useCreateIndex", true);
+// mongoose.connect("mongodb://localhost:27017/userDB", {useNewUrlParser: true});
+// mongoose.set("useCreateIndex", true);
 
 const userSchema = new mongoose.Schema ({
   email: String,
@@ -37,7 +37,7 @@ app.get("/register", function(req, res){
 
   app.post("/register", function(req, res){
 
-    res.render("localhost:3000")
+    res.render("stream")
 
     // background-image: url(data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.or…2-.9%202-2V8l-6-6H6zm7%207V3.5L18.5%209H13z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E), 
     // url(chrome://resources/images/arrow_down.svg);
