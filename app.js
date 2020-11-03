@@ -32,7 +32,7 @@ res.render("login");
 });
 
 app.get("/register", function(req, res){
-    res.render("register");
+    res.render("stream");
   });
 
   app.post("/register", function(req, res){
