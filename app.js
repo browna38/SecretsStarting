@@ -63,16 +63,16 @@ app.get("/register", function(req, res){
   
   });
 
-  for (route of routes) {
-    app.use(route.route,
-      createProxyMiddleware({
-            target: route.address,
-            pathRewrite: (path, req) => {
-                return path.split('/').slice(2).join('/'); // Could use replace, but take care of the leading '/'
-            }
-        })
-    );
-}
+//   for (route of routes) {
+//     app.use(route.route,
+//       createProxyMiddleware({
+//             target: route.address,
+//             pathRewrite: (path, req) => {
+//                 return path.split('/').slice(2).join('/'); // Could use replace, but take care of the leading '/'
+//             }
+//         })
+//     );
+// }
 
 app.listen(80, function() {
     console.log("Server started on port 80.");
